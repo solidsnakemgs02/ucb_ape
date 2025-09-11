@@ -3,7 +3,7 @@
 
 int main() {
     long long sum = 0;
-    long long N = 1000000000; // 1 bilhão
+    long long N = 1000000000; // 1 bilhão de verdade
 
     clock_t start = clock();
 
