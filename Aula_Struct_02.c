@@ -1,4 +1,5 @@
 #include <stdio.h>
+#define N_PESSOAS 2
 
 struct Pessoa {
     char nome[100];
@@ -10,9 +11,9 @@ struct Pessoa {
 };
 
 int main() {
-    struct Pessoa pessoas[5];
+    struct Pessoa pessoas[N_PESSOAS];
 
-    for(int i = 0; i < 5; i++) {
+    for(int i = 0; i < N_PESSOAS; i++) {
         printf("Cadastro da pessoa %d\n", i+1);
 
         printf("Nome: ");
@@ -39,7 +40,7 @@ int main() {
     }
 
     printf("===== LISTA DE PESSOAS =====\n");
-    for(int i = 0; i < 5; i++) {
+    for(int i = 0; i < N_PESSOAS; i++) {
         printf("Pessoa %d:\n", i+1);
         printf("Nome: %s", pessoas[i].nome);
         printf("Ano de nascimento: %d\n", pessoas[i].ano_nascimento);
@@ -56,7 +57,7 @@ int main() {
         return 1;
     }
 
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < N_PESSOAS; i++) {
         fwrite(&pessoas[i], sizeof(struct Pessoa), 1, f);
     }
 
